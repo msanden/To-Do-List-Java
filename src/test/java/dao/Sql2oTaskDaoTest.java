@@ -37,4 +37,31 @@ public class Sql2oTaskDaoTest {
         conn.close();
     }
 
+    @Test
+    public void addingTaskSetsId() throws Exception {
+        Task task = new Task ("mow lawn");
+        int originalTaskId = task.getId();
+        taskDao.add(task);
+        assertNotEquals(originalTaskId, task.getId());
+    }
+
+    @Test
+    public void existingTasksCanBeFoundById() throws Exception {
+        Task task = new Task("mow lawn");
+        taskDao.add(task);
+        Task foundTask = taskDao.findById(task.getId());
+        assertEquals(task, foundTask);
+    }
+
+    @Test
+    public void addedTasksAreReturnedFromgetAll() throws Exception {
+        Task task = new Task("mow lawn");
+        taskDao.add(task);
+        assertEquals(1,taskDao.getAll().size());
+    }
+
+    @Test
+    public void noTasksReturnsEmptyList() throws Exception {
+        assertEquals(0, taskDao.getAll().size());
+    }
 }
