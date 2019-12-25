@@ -8,14 +8,6 @@ import static org.junit.Assert.*;
 
 public class TaskTest {
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
     @Test
     public void NewTaskObjectGetsCorrectlyInstantiated_true() throws Exception {
         Task task = setupNewTask();
