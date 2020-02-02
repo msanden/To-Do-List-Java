@@ -26,6 +26,7 @@ public class TaskTest {
         assertEquals(false, task.getCompleted());
     }
 
+
     @Test
     public void getCreatedAtInstantiatesWithCurrentTimeToday() throws Exception {
         Task task = setupNewTask();
@@ -33,7 +34,7 @@ public class TaskTest {
     }
 
     public Task setupNewTask() {
-        return new Task("Wash Dishes");
+        return new Task("Wash Dishes", 1);
     }
 
 }
