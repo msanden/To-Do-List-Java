@@ -24,13 +24,13 @@ public interface TaskDao {
     void add(Task task);
 
     // READ
-    Task findBy(int id);
+    Task findById(int id);
 
     // UPDATE
-    // void update(int id, String content);
+    void update(int id, String content, int CategoryId);
 
     // DELETE
-    // void deleteById(int id);
-    // void clearAllTasks();
+    void deleteById(int id);
+    void clearAllTasks();
 
 }
