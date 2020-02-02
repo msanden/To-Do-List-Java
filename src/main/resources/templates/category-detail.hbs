@@ -1,0 +1,15 @@
+{{#partial "content"}}
+    <h2>{{category.name}}</h2>
+    <p>See you tasks:</p>
+    <ul>
+        {{#each tasks}}
+            <li>
+                <p><a href="/categories/{{category.id}}/tasks/{{id}}">{{description}}</a></p>
+            </li>
+        {{/each}}
+    </ul>
+    <a href="/categories/{{category.id}}/edit">Edit Category</a><br>
+    <a href="/categories/{{category.id}}/delete">Delete Category</a>
+{{/partial}}
+
+{{> layout.hbs}}
